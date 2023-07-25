@@ -1,0 +1,26 @@
+@startuml sequence
+
+title シーケンス図
+
+hnote over App : Init
+App -> MainWindow : Init
+hnote over MainWindow : Init
+MainWindow -> MainWindowViewModel
+hnote over MainWindowViewModel : Init
+MainWindowViewModel -> CounterModel
+hnote over CounterModel : Init
+
+loop アプリ動作
+
+    activate MainWindow
+    MainWindow -> MainWindowViewModel : ボタン押下
+    MainWindowViewModel -> CounterModel : ボタンにバインドされたコマンド実行
+    CounterModel -> CounterModel : インクリメント実行(デクリメント実行)
+    CounterModel -> MainWindowViewModel : Count変数の変更通知
+    MainWindowViewModel -> MainWindow : バインドしているCount変数の変更通知
+    MainWindow -> MainWindow : UI更新
+    deactivate MainWindow
+
+end
+
+@enduml

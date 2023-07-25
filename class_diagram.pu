@@ -1,0 +1,42 @@
+@startuml class diagram
+
+namespace View {
+    class MainWindow<Window継承> {
+        + MainWindowViewModel DataContext
+    }
+}
+namespace ViewModel {
+    class MainWindowViewModel<INotifyPropertyChanged継承> {
+        + int Count
+        + RelayCommand IncrementCommand
+        + RelayCommand DecrementCommand
+        - ICounterModel counterModel
+        - void Counter_PropertyChanged(object? sender, PropertyChangedEventArgs e)
+        - void OnPropertyChanged(string? propertyName)
+    }
+    class RelayCommand<ICommand継承> {
+        - Action _execute;
+        + RelayCommand(Action execute)
+        + event EventHandler? CanExecuteChanged
+        + bool CanExecute(object? parameter)
+        + void Execute(object? parameter)
+    }
+
+    RelayCommand -left-* MainWindowViewModel
+}
+namespace Model {
+    interface ICounterModel<INotifyPropertyChanged継承> {
+        + int Count
+        + void Increment()
+        + void Decrement()
+    }
+    class CounterModel {}
+
+    ICounterModel <|-- CounterModel
+}
+
+Model.ICounterModel -up-* ViewModel.MainWindowViewModel
+
+ViewModel.MainWindowViewModel -up-* View.MainWindow
+
+@enduml
