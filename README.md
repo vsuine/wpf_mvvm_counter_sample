@@ -24,7 +24,7 @@
 
 ![class diagram](out/class_diagram/class_diagram.png)
 
-#### View
+### View
 
 View はユーザーインターフェース（UI）を担当します。具体的には以下の役割を果たします。
 
@@ -35,7 +35,7 @@ View はユーザーインターフェース（UI）を担当します。具体�
 View は ViewModel にどのようなプロパティやコマンドが定義されているかを知っていなければなりません。
 しかし、 ViewModel は View の詳細を知る必要はありません。
 
-#### ViewModel
+### ViewModel
 
 ViewModel は View と Model の中間に位置するもので、以下の役割を果たします。
 
@@ -46,7 +46,7 @@ ViewModel は View と Model の中間に位置するもので、以下の役割
 ViewModel は Model に対して命令するため、ある程度 Model の実装を知る必要があります。
 しかし、今回の例のようなインターフェースや抽象クラスを保持しておき、依存する Model を後から注入するといった設計にしておくことで Model との結合を必要最低限に抑え、コードの再利用性やテスト容易性を高めます。
 
-#### Model
+### Model
 
 Model は、アプリケーションのビジネスロジックとデータ状態を担当します。
 
