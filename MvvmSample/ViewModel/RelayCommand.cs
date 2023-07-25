@@ -4,7 +4,7 @@ using System.Windows.Input;
 namespace Sample.ViewModel
 {
     /// <summary>
-    /// “n‚³‚ê‚½execute‚ğÀs‚·‚é‚¾‚¯‚ÌCommand
+    /// é–¢æ•°ã‚’ä¸ãˆã¦ãã‚Œã‚’å®Ÿè¡Œã™ã‚‹ã ã‘ã®ã‚³ãƒãƒ³ãƒ‰
     /// </summary>
     internal class RelayCommand : ICommand
     {

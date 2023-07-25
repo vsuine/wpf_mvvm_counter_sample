@@ -31,11 +31,13 @@ namespace Sample.Model
 
         public void Increment()
         {
+            // カウントアップし、更新が通知される
             this.Count++;
         }
 
         public void Decrement()
         {
+            // カウントダウンし、更新が通知される
             this.Count--;
         }
 
